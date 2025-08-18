@@ -10,11 +10,11 @@ capabilities:
   # For DLLs, list of exports to add
   exports:
   # can be a basic string
-  - 'foo'
+  - 'example'
   # or have a prefix which will use a specific function signature
   # "rundll32" will make the export compatible for execution with rundll32.exe
   #   and the export name can be any valid function name
-  - 'rundll32::poop'
+  - 'rundll32::example'
   # "regsvr32" will make the export compatible for execution with regsvr32.exe
   #   but the name must be one of "DllRegisterServer", "DllUnregisterServer", "DllInstall"
   - 'regsvr32::DllRegisterServer'

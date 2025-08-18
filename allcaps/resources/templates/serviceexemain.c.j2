@@ -1,0 +1,9 @@
+int wmain(int argc, wchar_t* argv[]) {
+    SERVICE_TABLE_ENTRY ServiceTable[2] = { { NULL, NULL }, { NULL, NULL } };
+
+    ServiceTable[0].lpServiceProc = (LPSERVICE_MAIN_FUNCTION)ServiceMain;
+    ServiceTable[0].lpServiceName = SERVICE_NAME;
+
+    StartServiceCtrlDispatcher(ServiceTable);
+    return 0;
+}

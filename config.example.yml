@@ -1,0 +1,33 @@
+# Path to output file
+outfile: example.o
+
+capabilities:
+  # Root directory for capability source code/specs
+  directory: /home/user/capabilities
+  # List of capability names to include in final payload
+  desired:
+  - messagebox:
+  # For DLLs, list of exports to add
+  exports:
+  # can be a basic string
+  - 'foo'
+  # or have a prefix which will use a specific function signature
+  # "rundll32" will make the export compatible for execution with rundll32.exe
+  #   and the export name can be any valid function name
+  - 'rundll32::poop'
+  # "regsvr32" will make the export compatible for execution with regsvr32.exe
+  #   but the name must be one of "DllRegisterServer", "DllUnregisterServer", "DllInstall"
+  - 'regsvr32::DllRegisterServer'
+
+# controls for the final payload structure
+constraints:
+  # source language for capabilities
+  # one of: c
+  language: c
+  # payload format
+  # one of: coff, exe, dll
+  format: coff
+  # payload architecture
+  # one of: x64, x86
+  architecture: x64
+

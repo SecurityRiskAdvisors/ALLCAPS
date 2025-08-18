@@ -1,0 +1,13 @@
+ServiceStatus.dwServiceType = SERVICE_WIN32;
+ServiceStatus.dwCurrentState = SERVICE_START_PENDING;
+ServiceStatus.dwControlsAccepted = SERVICE_ACCEPT_STOP | SERVICE_ACCEPT_SHUTDOWN;
+ServiceStatus.dwWin32ExitCode = 0;
+ServiceStatus.dwServiceSpecificExitCode = 0;
+ServiceStatus.dwCheckPoint = 0;
+ServiceStatus.dwWaitHint = 0;
+
+hStatus = RegisterServiceCtrlHandler(SERVICE_NAME, (LPHANDLER_FUNCTION)ControlHandler);
+if (hStatus == (SERVICE_STATUS_HANDLE)NULL)
+    return;
+
+main();

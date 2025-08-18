@@ -1,0 +1,6 @@
+datap parser;
+BeaconDataParse(&parser, args, arlen);
+LPCWSTR argv[{{ num_args }}];
+{%- for i in range(num_args) %}
+argv[{{ i }}] = (LPCWSTR)BeaconDataExtract(&parser, NULL);
+{%- endfor %}
